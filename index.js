@@ -258,19 +258,19 @@ PurpleAirAccessory.prototype = {
 			return "Unknown"; // Error or unknown response
 		}
 		else if (aqi <= 50) {
-			return "Excellent"; // Return EXCELLENT
+			return "Good"; // Return Good
 		}
 		else if (aqi <= 100) {
-			return "Good"; // Return GOOD
+			return "Moderate"; // Return Moderate
 		}
 		else if (aqi <= 150) {
-			return "Fair"; // Return FAIR
+			return "Unhealthy for Sensitive Groups"; // Return Unhealthy for Sensitive Groups
 		}
 		else if (aqi <= 200) {
-			return "Inferior"; // Return INFERIOR
+			return "Unhealthy"; // Return Unhealthy
 		}
-		else if (aqi > 200) {
-			return "Poor"; // Return POOR (Homekit only goes to cat 5, so combined the last two AQI cats of Very Unhealty and Hazardous.
+		else if (aqi <= 300) {
+			return "Very Unhealthy"; // Return Very Unhealthy (Homekit only goes to cat 5, so combined the last two AQI cats of Very Unhealty and Hazardous.
 		}
 	},
 
